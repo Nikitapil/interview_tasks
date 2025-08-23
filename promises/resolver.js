@@ -5,8 +5,8 @@
 
 Примеры:
 
-resolver([Promise.reject(2), Promise.resolve(5)]) - Promise => 5
-resolver([[Promise.reject(2), Promise.reject(5)]]) - Promise => Errors([2, 5])
+resolver([Promise.reject(2), Promise.resolve(5)]).then(result => console.log(result)) //5
+resolver([Promise.reject(2), Promise.reject(5)]).catch(e => console.log(e)) // [2, 5]
 
 Начальное условие
 const resolver = () => {}
