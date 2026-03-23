@@ -1,4 +1,4 @@
-// find the way to g
+// find the way
 
 const graph = {
   a: ['b', 'c'],
@@ -10,7 +10,7 @@ const graph = {
   g: []
 }
 
-const bfs = (graph, start) => {
+const bfs = (graph, start, end) => {
   const visited = new Set()
   const queue = [start]
 
@@ -19,7 +19,7 @@ const bfs = (graph, start) => {
     visited.add(node)
     const current = graph[node]
     for (let i = 0; i < current.length; i++) {
-      if (current[i] === 'g') {
+      if (current[i] === end) {
         return visited
       } else if (!visited.has(current[i])) {
         queue.push(current[i])
@@ -30,4 +30,4 @@ const bfs = (graph, start) => {
   return visited
 }
 
-console.log(bfs(graph, 'a'));
+console.log(bfs(graph, 'a', 'g'));
