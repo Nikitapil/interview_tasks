@@ -22,7 +22,7 @@ const dfs = (graph, start, end) => {
       if (current[i] === end) {
         return visited
       } else if (!visited.has(current[i])) {
-        stack.unshift(current[i])
+        stack.push(current[i])
       }
     }
   }
